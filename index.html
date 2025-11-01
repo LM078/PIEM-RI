@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laura Manfelde</title>
+
+  <!-- CSS connection -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- ===== Header ===== -->
+  <header>
+    <h1>PIEMĒRI</h1>
+    <nav>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- 🖼️ ===== Portfolio Section ===== -->
+  <section id="portfolio">
+    <h2></h2>
+    <div class="masonry-grid">
+      <div class="card fade-in"><img src="assets/Image1.png" alt="Image1"></div>
+      <div class="card fade-in"><img src="assets/Image2.png" alt="Image2"></div>
+      <div class="card fade-in"><img src="assets/Image3.png" alt="Image3"></div>
+      <div class="card fade-in"><img src="assets/Image4.png" alt="Image4"></div>
+      <div class="card fade-in"><img src="assets/Image5.png" alt="Image5"></div>
+      <div class="card fade-in"><img src="assets/Image6.png" alt="Image6"></div>
+      <div class="card fade-in"><img src="assets/Image7.png" alt="Image6"></div>
+      <div class="card fade-in"><img src="assets/Image8.png" alt="Image6"></div>
+      <div class="card fade-in"><img src="assets/Image9.png" alt="Image6"></div>
+      <div class="card fade-in"><img src="assets/Image10.png" alt="Image6"></div>
+      <div class="card fade-in"><img src="assets/Image11.png" alt="Image6"></div>
+      <div class="card fade-in"><img src="assets/Image12.png" alt="Image6"></div>
+
+      <div class="card fade-in"><img src="assets/Story1.png" alt="Story 1"></div>
+      <div class="card fade-in"><img src="assets/Story2.png" alt="Story 2"></div>
+      <div class="card fade-in"><img src="assets/Story3.png" alt="Story 3"></div>
+      <div class="card fade-in"><img src="assets/Story4.png" alt="Story 4"></div>
+
+      <div class="card fade-in"><img src="assets/Makets1.png" alt="Makets 1"></div>
+      <div class="card fade-in"><img src="assets/Makets2.png" alt="Makets 2"></div>
+
+      <!-- 🎥 Example video cards -->
+      <div class="card fade-in">
+        <video controls muted loop playsinline>
+          <source src="assets/Video1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="card fade-in">
+        <video controls muted loop playsinline>
+          <source src="assets/Video2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="card fade-in">
+        <video controls muted loop playsinline>
+          <source src="assets/Video3.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="card fade-in">
+        <video controls muted loop playsinline>
+          <source src="assets/Video4.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="card fade-in">
+        <video controls muted loop playsinline>
+          <source src="assets/Video5.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="card fade-in">
+        <video controls muted loop playsinline>
+          <source src="assets/Video6.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+ <div class="card fade-in">
+        <video controls muted loop playsinline>
+          <source src="assets/Video6.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+       <div class="card fade-in">
+        <video controls muted loop playsinline>
+          <source src="assets/Video7.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+       <div class="card fade-in">
+        <video controls muted loop playsinline>
+          <source src="assets/Video8.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+       <div class="card fade-in">
+        <video controls muted loop playsinline>
+          <source src="assets/Video9.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+       <div class="card fade-in">
+        <video controls muted loop playsinline>
+          <source src="assets/Video10.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== Contact Section ===== -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email <a href="mailto:lauramanfelde@gmail.com">lauramanfelde@gmail.com</a></p>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>© 2025 Portfolio. All rights reserved.</p>
+  </footer>
+
+  <!-- ===== Lightbox Overlay ===== -->
+  <div id="lightbox" class="lightbox hidden">
+    <span class="close">&times;</span>
+    <div class="lightbox-content">
+      <img src="" alt="" class="lightbox-media" />
+      <video src="" controls class="lightbox-media"></video>
+    </div>
+  </div>
+
+  <!-- ===== Masonry + Lightbox Script ===== -->
+  <script>
+    function masonryResize() {
+      const grid = document.querySelector('.masonry-grid');
+      if (!grid) return;
+      const rowHeight = parseFloat(getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+      const gap = parseFloat(getComputedStyle(grid).getPropertyValue('gap'));
+
+      grid.querySelectorAll('.card').forEach(card => {
+        const contentHeight = card.getBoundingClientRect().height;
+        const rowSpan = Math.ceil((contentHeight + gap) / (rowHeight + gap));
+        card.style.gridRowEnd = 'span ' + rowSpan;
+      });
+    }
+
+    // recalc layout after images/videos load
+    window.addEventListener('load', () => {
+      const grid = document.querySelector('.masonry-grid');
+      if (!grid) return;
+
+      const imgs = grid.querySelectorAll('img');
+      const videos = grid.querySelectorAll('video');
+
+      imgs.forEach(img => {
+        if (img.complete && img.naturalHeight !== 0) masonryResize();
+        else img.addEventListener('load', masonryResize);
+      });
+
+      videos.forEach(video => {
+        video.addEventListener('loadedmetadata', masonryResize);
+      });
+
+      masonryResize();
+    });
+
+    // throttle on resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(masonryResize, 150);
+    });
+
+    // ===== Lightbox Functionality =====
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    const lightboxVideo = lightbox.querySelector('video');
+    const closeBtn = lightbox.querySelector('.close');
+
+    document.querySelectorAll('.card img, .card video').forEach(media => {
+      media.addEventListener('click', () => {
+        lightbox.classList.remove('hidden');
+        if (media.tagName === 'IMG') {
+          lightboxImg.src = media.src;
+          lightboxImg.style.display = 'block';
+          lightboxVideo.style.display = 'none';
+          lightboxVideo.pause();
+        } else if (media.tagName === 'VIDEO') {
+          const src = media.querySelector('source') ? media.querySelector('source').src : media.src;
+          lightboxVideo.src = src;
+          lightboxVideo.style.display = 'block';
+          lightboxImg.style.display = 'none';
+          lightboxVideo.play();
+        }
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.classList.add('hidden');
+      lightboxVideo.pause();
+    });
+
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) {
+        lightbox.classList.add('hidden');
+        lightboxVideo.pause();
+      }
+    });
+
+    
+
+
+    // ===== Fade-in on Scroll =====
+const fadeEls = document.querySelectorAll('.fade-in');
+
+function handleScrollAnimations() {
+  const triggerBottom = window.innerHeight * 0.85;
+  fadeEls.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < triggerBottom) {
+      el.classList.add('visible');
+    }
+  });
+}
+
+// Run on scroll & initial load
+window.addEventListener('scroll', handleScrollAnimations);
+window.addEventListener('load', handleScrollAnimations);
+
+  </script>
+</body>
+</html>
